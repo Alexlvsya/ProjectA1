@@ -92,7 +92,7 @@ def calculate_cvar(returns, alpha=0.05):
 
 # Descargar y analizar datos de activos
 def asset_analysis(etfs, start_date, end_date):
-    data = yf.download(etfs, start=start_date, end=end_date)["Adj Close"]
+    data = yf.download(etfs, start=start_date, end=end_date)['Close']
     risk_free_rate = 0.00116 / 252  # Tasa libre de riesgo diaria
     daily_returns = data.pct_change()  # Rendimientos diarios en términos porcentuales
 
