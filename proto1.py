@@ -18,8 +18,8 @@ def accion(symbol,start_date,end_date):
   pe_ratio = asset_info.get('trailingPE', None)
   pb_ratio = asset_info.get('priceToBook', None)
   #market cap = asset's last price * number of outstanding shares
-  '''se utiliza iloc para acceder al último elemento de la lista (asset_data) por medio de su
-  indice, no del nombre de la fila'''
+  #se utiliza iloc para acceder al último elemento de la lista (asset_data) por medio de su
+  #indice, no del nombre de la fila
 
   st.subheader("\nBasic Information:")
 
@@ -89,15 +89,10 @@ def asset_comparisson(symbols):
   print('\nMetric Comparisson between the assets')
   print(df_metrics)
 
-symbol = input(str("Ingrese el símbolo de la acción: "))
-print("Las fechas deben estar en formato YYYY/MM/DD")
-#getting the dates (period)
-start_date = input(str("Ingrese la fecha de inicio: "))
-end_date = input(str("Ingrese la fecha de finalización: "))
-accion(symbol, start_date, end_date)
+
  
-symbols = input(str("Ingrese los símbolos de las acciones a comparar, separados por comas: ")).split(',')
-asset_comparisson(symbols)
+'''symbols = input(str("Ingrese los símbolos de las acciones a comparar, separados por comas: ")).split(',')
+asset_comparisson(symbols)'''
 
 
 # Configuración de la página de Streamlit
