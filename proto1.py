@@ -98,6 +98,7 @@ st.set_page_config(
 
 # Título principal
 st.title("Project A1 (Prototype 1)")
+st.write("Created by Alejandro Ramirez, Actuarial Sciences Student, Universidad Nacional Autónoma de México")
 st.write("Created for educational purposes, invest under your own risk :) ")
 
 # Opciones para la selección
