@@ -64,13 +64,7 @@ def asset_comparisson(symbols, start_date, end_date):
     normalized_data[s] = asset_dta / asset_dta.iloc[0] *100
 
 #graficar comparación
-  plt.figure(figsize = (12, 6))
-  normalized_data.plot(title = 'Return Comparisson')
-  plt.xlabel('Date')
-  plt.ylabel('Return %')
-  plt.legend(symbols)
-  plt.grid(True)
-  plt.show()
+  st.line_chart(normalized_data)
 
   metrics = {
         'P/E Ratio': [],
@@ -86,8 +80,8 @@ def asset_comparisson(symbols, start_date, end_date):
     metrics['Dividend Yield'].append(asset_ifo.get('dividendYield', 0) * 100 if asset_ifo.get('dividendYield', 0) else None)
     
   df_metrics = pd.DataFrame(metrics, index = symbols) #el indice de cada fila sera el simbolo de cada accion
-  print('\nMetric Comparisson between the assets')
-  print(df_metrics)
+  st.subheader('\nMetric Comparisson between the assets')
+  st.write(df_metrics)
 
 # Configuración de la página
 st.set_page_config(
