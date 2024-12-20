@@ -132,7 +132,7 @@ elif selected_option == "Asset Comparisson":
    end_date = st.date_input("Ingrese la fecha de finalización:").strftime('%Y-%m-%d')
    if st.button("Analize"):
       if symbols and start_date and end_date:
-          asset_comparisson(symbols, start_date, end_date)
+          asset_comparisson(symbols)
       else:
           st.warning("Por favor, complete todos los campos antes de continuar.")
 else:
