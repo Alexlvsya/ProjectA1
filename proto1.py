@@ -57,7 +57,7 @@ def accion(symbol,start_date,end_date):
   st.pyplot(fig)
 
 
-def asset_comparisson(symbols):
+def asset_comparisson(symbols, start_date, end_date):
   normalized_data = pd.DataFrame()
   for s in symbols: 
     asset_dta = yf.download(s, start = start_date, end = end_date)['Close']
@@ -130,7 +130,7 @@ elif selected_option == "Asset Comparisson":
 
    start_date = st.date_input("Ingrese la fecha de inicio:").strftime('%Y-%m-%d')
    end_date = st.date_input("Ingrese la fecha de finalización:").strftime('%Y-%m-%d')
-   if st.button("Analizar"):
+   if st.button("Analize"):
       if symbols and start_date and end_date:
           asset_comparisson(symbols, start_date, end_date)
       else:
