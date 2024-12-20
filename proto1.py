@@ -126,6 +126,7 @@ elif selected_option == "Asset Comparisson":
    st.subheader("Asset Comparisson")
 
    symbols = st.text_input("Ingrese los simbolos de las acciones separadas por comas")
+   symbols = [s.strip() for s in symbols.split(',') if s.strip()]
    st.write("Las fechas deben estar en formato YYYY-MM-DD")
 
    start_date = st.date_input("Ingrese la fecha de inicio:").strftime('%Y-%m-%d')
