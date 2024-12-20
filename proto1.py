@@ -124,7 +124,16 @@ if selected_option == "Fundamental Analysis":
             st.warning("Por favor, complete todos los campos antes de continuar.")
 elif selected_option == "Asset Comparisson":
    st.subheader("Asset Comparisson")
+
    symbols = st.text_input("Ingrese los simbolos de las acciones separadas por comas")
-   asset_comparisson(symbols)
+   st.write("Las fechas deben estar en formato YYYY-MM-DD")
+
+   start_date = st.date_input("Ingrese la fecha de inicio:").strftime('%Y-%m-%d')
+   end_date = st.date_input("Ingrese la fecha de finalización:").strftime('%Y-%m-%d')
+   if st.button("Analizar"):
+      if symbols and start_date and end_date:
+            accion(symbols, start_date, end_date)
+      else:
+            st.warning("Por favor, complete todos los campos antes de continuar.")
 else:
    st.write('Under Construction...')
