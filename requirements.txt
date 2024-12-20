@@ -1,0 +1,13 @@
+matplotlib
+plotly
+xlrd
+exchange_calendars
+openpyxl
+yfinance
+pandas
+numpy
+streamlit
+seaborn
+PyPortfolioOpt
+scikit-learn 
+datetime
