@@ -91,14 +91,14 @@ def asset_comparisson(symbols):
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Portfolio Management and Asset Allocation",
+    page_title="Project A1 (Prototype 1)",
     page_icon="📈",
     layout="wide",
 )
 
 # Título principal
-st.title("Portfolio Management and Asset Allocation")
-st.write("Created for the Portfolio Management an Asset Allocation Course, UNAM")
+st.title("Project A1 (Prototype 1)")
+st.write("Created for educational purposes, invest under your own risk :) ")
 
 # Opciones para la selección
 graph_options = [
