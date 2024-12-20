@@ -89,16 +89,16 @@ def asset_comparisson(symbols):
   print('\nMetric Comparisson between the assets')
   print(df_metrics)
 
+# Configuración de la página
+st.set_page_config(
+    page_title="Portfolio Management and Asset Allocation",
+    page_icon="📈",
+    layout="wide",
+)
 
- 
-'''symbols = input(str("Ingrese los símbolos de las acciones a comparar, separados por comas: ")).split(',')
-asset_comparisson(symbols)'''
-
-
-# Configuración de la página de Streamlit
-title = "Project A1 (Prototype 1)"
-st.set_page_config(page_title=title, layout="wide")
-st.title(title)
+# Título principal
+st.title("Portfolio Management and Asset Allocation")
+st.write("Created for the Portfolio Management an Asset Allocation Course, UNAM")
 
 # Opciones para la selección
 graph_options = [
