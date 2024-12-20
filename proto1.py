@@ -122,5 +122,9 @@ if selected_option == "Fundamental Analysis":
             accion(symbol, start_date, end_date)
         else:
             st.warning("Por favor, complete todos los campos antes de continuar.")
+elif selected_option == "Asset Comparisson":
+   st.subheader("Asset Comparisson")
+   symbols = st.text_input("Ingrese los simbolos de las acciones separadas por comas")
+   asset_comparisson(symbols)
 else:
    st.write('Under Construction...')
