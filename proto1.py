@@ -189,23 +189,23 @@ if selected_option == "About the Author":
     # Información adicional sobre el autor
     st.write("""
   Hello! My name is Alejandro, and I am a 6th-semester student of Actuarial Sciences
-            at the Universidad Nacional Autónoma de México (UNAM). I have recently 
-            completed the first half of my bachelor's degree, and with the knowledge 
-            I've gained over the past two years, I am developing a Streamlit app focused
-            on Asset Allocation and Portfolio Management.
+    at the Universidad Nacional Autónoma de México (UNAM). I have recently 
+    completed the first half of my bachelor's degree, and with the knowledge 
+    I've gained over the past two years, I am developing a Streamlit app focused
+    on Asset Allocation and Portfolio Management.
              
-            The goal of this prototype application is to provide basic yet valuable insights 
-            into various assets available in the stock market and explain this information in 
-            a simple and accessible way for users. I am thrilled to see how far this project can go, 
-            and my aspiration is that, over time, this application will become a helpful tool for
-            investors to identify suitable assets and maximize their profits in the stock market.
+    The goal of this prototype application is to provide basic yet valuable insights 
+    into various assets available in the stock market and explain this information in 
+    a simple and accessible way for users. I am thrilled to see how far this project can go, 
+    and my aspiration is that, over time, this application will become a helpful tool for
+    investors to identify suitable assets and maximize their profits in the stock market.
 
-            I am particularly interested in pursuing a career in quantitative finance.
+    I am particularly interested in pursuing a career in quantitative finance.
 
-            To gather live data for the app, I am utilizing the yfinance API for Python, and all the source 
-            code is hosted on GitHub.
+    To gather live data for the app, I am utilizing the yfinance API for Python, and all the source 
+    code is hosted on GitHub.
 
-            Feel free to contact me via email with any questions or suggestions you may have.
+    Feel free to contact me via email with any questions or suggestions you may have.
                 
     """)
     st.markdown("[Alejandro's LinkedIn Profile ](www.linkedin.com/in/alejandro-ramirez-camacho-7b4b28247)")
