@@ -183,7 +183,7 @@ if selected_option == "About the Author":
         image_url, 
         caption="Alejandro Ramirez C. - Author", 
         use_container_width=False,  # Evita que la imagen se expanda a todo el ancho
-        width=100  # Ajusta este valor según el tamaño real de la imagen
+        width=120  # Ajusta este valor según el tamaño real de la imagen
     )
     
     # Información adicional sobre el autor
