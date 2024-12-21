@@ -174,24 +174,42 @@ graph_options = [
 selected_option = st.sidebar.selectbox('What are we doing today?', graph_options)
 
 if selected_option == "About the Author":
-    st.title("About the Author")
+    st.title("Message from the Author")
     
     # URL de la imagen (repositorio de GitHub o cualquier otro enlace público)
     image_url = "https://raw.githubusercontent.com/Alexlvsya/ProjectA1/main/IMG_8831.JPEG"
     # Mostrar imagen centrada
     st.image(
         image_url, 
-        caption="Your Name - Author", 
-        use_column_width=False,  # Evita que la imagen se expanda a todo el ancho
-        width=300  # Ajusta este valor según el tamaño real de la imagen
+        caption="Alejandro Ramirez C. - Author", 
+        use_container_width=False,  # Evita que la imagen se expanda a todo el ancho
+        width=100  # Ajusta este valor según el tamaño real de la imagen
     )
     
     # Información adicional sobre el autor
     st.write("""
-    Hola, soy [Tu Nombre]. Soy un apasionado desarrollador con experiencia en 
-    análisis de datos, aprendizaje automático y desarrollo de aplicaciones.
-    Si quieres saber más, ¡puedes contactarme en mis redes sociales!
+  Hello! My name is Alejandro, and I am a 6th-semester student of Actuarial Sciences
+            at the Universidad Nacional Autónoma de México (UNAM). I have recently 
+            completed the first half of my bachelor's degree, and with the knowledge 
+            I've gained over the past two years, I am developing a Streamlit app focused
+            on Asset Allocation and Portfolio Management.
+             
+            The goal of this prototype application is to provide basic yet valuable insights 
+            into various assets available in the stock market and explain this information in 
+            a simple and accessible way for users. I am thrilled to see how far this project can go, 
+            and my aspiration is that, over time, this application will become a helpful tool for
+            investors to identify suitable assets and maximize their profits in the stock market.
+
+            I am particularly interested in pursuing a career in quantitative finance.
+
+            To gather live data for the app, I am utilizing the yfinance API for Python, and all the source 
+            code is hosted on GitHub.
+
+            Feel free to contact me via email with any questions or suggestions you may have.
+                
     """)
+    st.markdown("[Alejandro's LinkedIn Profile ](www.linkedin.com/in/alejandro-ramirez-camacho-7b4b28247)")
+    st.markdown("[e-mail](alexramca@icloud.com)")
 
 elif selected_option == "Fundamental Analysis":
     symbol = st.text_input("Ingrese el símbolo de la acción:", "AAPL")
