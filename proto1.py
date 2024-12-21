@@ -160,11 +160,12 @@ st.set_page_config(
 
 # Título principal
 st.title("Project A1 (Prototype 1)")
-st.write("Created by Alejandro Ramirez, Actuarial Sciences Student, Universidad Nacional Autónoma de México")
+st.write("Created by Alejandro Ramirez Camacho, Actuarial Science´s Student, Universidad Nacional Autónoma de México")
 st.write("Created for educational purposes, invest under your own risk :) ")
 
 # Opciones para la selección
 graph_options = [
+    "About the Author",
     "Fundamental Analysis",
     "Asset Comparisson",
     "Asset Analysis",
@@ -172,7 +173,27 @@ graph_options = [
 ]
 selected_option = st.sidebar.selectbox('What are we doing today?', graph_options)
 
-if selected_option == "Fundamental Analysis":
+if selected_option == "About the Author":
+    st.title("About the Author")
+    
+    # URL de la imagen (repositorio de GitHub o cualquier otro enlace público)
+    image_url = "https://raw.githubusercontent.com/Alexlvsya/ProjectA1/main/IMG_8831.JPEG"
+    # Mostrar imagen centrada
+    st.image(
+        image_url, 
+        caption="Your Name - Author", 
+        use_column_width=False,  # Evita que la imagen se expanda a todo el ancho
+        width=300  # Ajusta este valor según el tamaño real de la imagen
+    )
+    
+    # Información adicional sobre el autor
+    st.write("""
+    Hola, soy [Tu Nombre]. Soy un apasionado desarrollador con experiencia en 
+    análisis de datos, aprendizaje automático y desarrollo de aplicaciones.
+    Si quieres saber más, ¡puedes contactarme en mis redes sociales!
+    """)
+
+elif selected_option == "Fundamental Analysis":
     symbol = st.text_input("Ingrese el símbolo de la acción:", "AAPL")
     st.write("Las fechas deben estar en formato YYYY-MM-DD")
 
