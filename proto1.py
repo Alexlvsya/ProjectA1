@@ -202,13 +202,13 @@ if selected_option == "About the Author":
 
     I am particularly interested in pursuing a career in quantitative finance.
 
-    To gather live data for the app, I am utilizing the yfinance API for Python, and all the source 
+    To gather live data for the app, I am using the yfinance API for Python, and all the source 
     code is hosted on GitHub.
 
     Feel free to contact me via email with any questions or suggestions you may have.
                 
     """)
-    st.markdown("[Alejandro's LinkedIn Profile ](www.linkedin.com/in/alejandro-ramirez-camacho-7b4b28247)")
+    st.markdown("[Alejandro's LinkedIn Profile ](https://www.linkedin.com/in/alejandro-ramirez-camacho-7b4b28247)")
     st.markdown("[e-mail](alexramca@icloud.com)")
 
 elif selected_option == "Fundamental Analysis":
