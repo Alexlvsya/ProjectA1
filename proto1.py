@@ -209,7 +209,7 @@ if selected_option == "About the Author":
                 
     """)
     st.markdown("[Alejandro's LinkedIn Profile ](https://www.linkedin.com/in/alejandro-ramirez-camacho-7b4b28247)")
-    st.markdown("[e-mail](alexramca@icloud.com)")
+    st.write("e-mail : alexramca@icloud.com")
 
 elif selected_option == "Fundamental Analysis":
     symbol = st.text_input("Ingrese el símbolo de la acción:", "AAPL")
