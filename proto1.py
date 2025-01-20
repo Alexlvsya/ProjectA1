@@ -32,10 +32,17 @@ def accion(symbol,start_date,end_date):
   st.write(f"Country: {asset_info.get('country', 'Not Available')}")
 
   st.write(f'{symbol}´s approximate market capitalization is ${marketCap.iloc[0]}')
+  st.write("Market Capitalization is the total market value of the company's outstanding shares")
 
   st.write(f'{symbol}´s P/E ratio is {pe_ratio}')
+  st.write('''Obtained with the following formula: price per share / earnings per share; it shows
+   how much investors are willing to pay for each dollar of  the company's profit''')
 
   st.write(f'{symbol}´s P/B ratio is {pb_ratio}')
+  st.write('''Obtained with the following formula: price per share / book value per share; it measures
+   how much investors are willing to pay for each dollar of a company's assets. If P/B ratio is 1, the company´s 
+   market value is the same as its book value, if P/B ratio <1 the company is possibly undervaluated, if 
+   P/B>1, there could be additional value that is not into accounting books.''')
 
   #price plot
   st.subheader(f'{symbol}´s price over time') 
