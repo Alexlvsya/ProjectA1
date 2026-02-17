@@ -10,11 +10,13 @@ import plotly.graph_objects as go
 import streamlit as st 
 
 
+
 #ANALISIS FUNDAMENTAL
 @st.cache_data(ttl=3600)
 def get_asset_data(symbol, start_date, end_date):
     ticker = yf.Ticker(symbol)
-    
+    import time
+    time.sleep(1)
     data = yf.download(symbol, start=start_date, end=end_date)['Close']
     
     fast_info = ticker.fast_info   # MUCHÍSIMO más ligero
