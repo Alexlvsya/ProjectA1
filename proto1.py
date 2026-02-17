@@ -25,7 +25,6 @@ def get_asset_data(symbol, start_date, end_date):
     )['Close']
     return data
     
-    return data, fast_info, full_info
 def accion(symbol, start_date, end_date):
     try:
         asset_data = get_asset_data(symbol, start_date, end_date)
@@ -38,12 +37,12 @@ def accion(symbol, start_date, end_date):
 
         # Market Cap usando fast_info
         last_price = asset_data.iloc[-1]
-        shares_outstanding = fast_info.get("sharesOutstanding", None)
+        shares_outstanding = asset_data.get("sharesOutstanding", None)
 
         marketCap = last_price * shares_outstanding if shares_outstanding else None
 
-        pe_ratio = asset_info.get('trailingPE', None)
-        pb_ratio = asset_info.get('priceToBook', None)
+        pe_ratio = asset_data.get('trailingPE', None)
+        pb_ratio = asset_data.get('priceToBook', None)
 
   #market cap = asset's last price * number of outstanding shares
   #se utiliza iloc para acceder al último elemento de la lista (asset_data) por medio de su
