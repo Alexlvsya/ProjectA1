@@ -85,6 +85,8 @@ def accion(symbol, start_date, end_date):
         ax.set_title(f'{symbol}´s Return Over the Selected Period of Time')
         ax.grid(True)
         st.pyplot(fig)
+    except Exception as e:
+        st.error("Error retrieving data. You may be rate-limited. Try again later.")
 
 #COMPARACION DE ACTIVOS 
 def asset_comparisson(symbols, start_date, end_date):
