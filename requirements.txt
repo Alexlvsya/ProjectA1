@@ -11,3 +11,5 @@ seaborn
 PyPortfolioOpt
 scikit-learn 
 datetime
+altair==4.2.2
+
