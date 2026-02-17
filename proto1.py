@@ -13,19 +13,22 @@ import streamlit as st
 
 #ANALISIS FUNDAMENTAL
 @st.cache_data(ttl=3600)
+@st.cache_data(ttl=21600)  # 6 horas
 def get_asset_data(symbol, start_date, end_date):
     ticker = yf.Ticker(symbol)
-    import time
-    time.sleep(1)
-    data = yf.download(symbol, start=start_date, end=end_date)['Close']
-    
-    fast_info = ticker.fast_info   # MUCHÍSIMO más ligero
-    full_info = ticker.info        # solo una vez
+    data = yf.download(
+        symbol,
+        start=start_date,
+        end=end_date,
+        progress=False,
+        threads=False
+    )['Close']
+    return data
     
     return data, fast_info, full_info
 def accion(symbol, start_date, end_date):
     try:
-        asset_data, fast_info, asset_info = get_asset_data(symbol, start_date, end_date)
+        asset_data = get_asset_data(symbol, start_date, end_date)
         
         if asset_data.empty:
             st.error("No data found for this symbol.")
