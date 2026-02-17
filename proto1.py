@@ -44,47 +44,47 @@ def accion(symbol, start_date, end_date):
   #se utiliza iloc para acceder al último elemento de la lista (asset_data) por medio de su
   #indice, no del nombre de la fila
 
-      st.subheader("\nBasic Information:")
+        st.subheader("\nBasic Information:")
     
-      st.write(f"Name: {asset_info.get('longName', 'Not Available')}")
+        st.write(f"Name: {asset_info.get('longName', 'Not Available')}")
     
-      st.write(f"Sector: {asset_info.get('sector', 'Not Available')}")
+        st.write(f"Sector: {asset_info.get('sector', 'Not Available')}")
     
-      st.write(f"Industry: {asset_info.get('industry', 'Not Available')}")
+        st.write(f"Industry: {asset_info.get('industry', 'Not Available')}")
     
-      st.write(f"Country: {asset_info.get('country', 'Not Available')}")
+        st.write(f"Country: {asset_info.get('country', 'Not Available')}")
     
-      st.write(f'{symbol}´s approximate market capitalization is ${marketCap.iloc[0]}')
-      st.write("Market Capitalization is the total market value of the company's outstanding shares")
+        st.write(f'{symbol}´s approximate market capitalization is ${marketCap.iloc[0]}')
+        st.write("Market Capitalization is the total market value of the company's outstanding shares")
     
-      st.write(f'{symbol}´s P/E ratio is {pe_ratio}')
-      st.write('''Obtained with the following formula: price per share / earnings per share; it shows
+        st.write(f'{symbol}´s P/E ratio is {pe_ratio}')
+        st.write('''Obtained with the following formula: price per share / earnings per share; it shows
        how much investors are willing to pay for each dollar of  the company's profit''')
     
-      st.write(f'{symbol}´s P/B ratio is {pb_ratio}')
-      st.write('''Obtained with the following formula: price per share / book value per share; it measures
+        st.write(f'{symbol}´s P/B ratio is {pb_ratio}')
+        st.write('''Obtained with the following formula: price per share / book value per share; it measures
        how much investors are willing to pay for each dollar of a company's assets. If P/B ratio is 1, the company´s 
        market value is the same as its book value, if P/B ratio <1 the company is possibly undervaluated, if 
        P/B>1, there could be additional value that is not into accounting books.''')
     
       #price plot
-      st.subheader(f'{symbol}´s price over time') 
-      fig, ax =plt.subplots()
-      ax.plot(asset_data.index, asset_data.values, color = 'b')
-      ax.set_xlabel('Date')
-      ax.set_ylabel('Price')
-      ax.set_title(f'{symbol}´s Price Over Time')
-      st.pyplot(fig)
+        st.subheader(f'{symbol}´s price over time') 
+        fig, ax =plt.subplots()
+        ax.plot(asset_data.index, asset_data.values, color = 'b')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Price')
+        ax.set_title(f'{symbol}´s Price Over Time')
+        st.pyplot(fig)
     
       #return plot
-      st.subheader(f'{symbol}´s Return over the selected period')
-      fig, ax = plt.subplots()
-      ax.plot(normalized_price.index, normalized_price.values, color = 'g')
-      ax.set_xlabel('Date')
-      ax.set_ylabel('Return %')
-      ax.set_title(f'{symbol}´s Return Over the Selected Period of Time')
-      ax.grid(True)
-      st.pyplot(fig)
+        st.subheader(f'{symbol}´s Return over the selected period')
+        fig, ax = plt.subplots()
+        ax.plot(normalized_price.index, normalized_price.values, color = 'g')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Return %')
+        ax.set_title(f'{symbol}´s Return Over the Selected Period of Time')
+        ax.grid(True)
+        st.pyplot(fig)
 
 #COMPARACION DE ACTIVOS 
 def asset_comparisson(symbols, start_date, end_date):
