@@ -189,7 +189,7 @@ if selected_option == "About the Author":
     st.image(
         image_url, 
         caption="Alejandro Ramirez  - Author", 
-        use_container_width=False,  # Evita que la imagen se expanda a todo el ancho
+        width=300,  # Evita que la imagen se expanda a todo el ancho
         width=120  # Ajusta este valor según el tamaño real de la imagen
     )
     
