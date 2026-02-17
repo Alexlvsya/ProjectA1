@@ -54,7 +54,11 @@ def accion(symbol, start_date, end_date):
     
         st.write(f"Country: {asset_info.get('country', 'Not Available')}")
     
-        st.write(f'{symbol}´s approximate market capitalization is ${marketCap.iloc[0]}')
+        if marketCap:
+            st.write(f"{symbol}'s approximate market capitalization is ${marketCap:,.0f}")
+        else:
+            st.write("Market Cap not available.")
+
         st.write("Market Capitalization is the total market value of the company's outstanding shares")
     
         st.write(f'{symbol}´s P/E ratio is {pe_ratio}')
