@@ -8,15 +8,38 @@ import datetime as dt
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st 
+
+
 #ANALISIS FUNDAMENTAL
-def accion(symbol,start_date,end_date):
-  asset_data = yf.download(symbol, start = start_date, end = end_date)['Close']
-  asset_info = yf.Ticker(symbol).info
-  normalized_price = asset_data / asset_data.iloc[0] * 100
- #estimating market cap
-  marketCap = asset_data.iloc[-1] * yf.Ticker(symbol).info['sharesOutstanding']
-  pe_ratio = asset_info.get('trailingPE', None)
-  pb_ratio = asset_info.get('priceToBook', None)
+@st.cache_data(ttl=3600)
+def get_asset_data(symbol, start_date, end_date):
+    ticker = yf.Ticker(symbol)
+    
+    data = yf.download(symbol, start=start_date, end=end_date)['Close']
+    
+    fast_info = ticker.fast_info   # MUCHÍSIMO más ligero
+    full_info = ticker.info        # solo una vez
+    
+    return data, fast_info, full_info
+def accion(symbol, start_date, end_date):
+    try:
+        asset_data, fast_info, asset_info = get_asset_data(symbol, start_date, end_date)
+        
+        if asset_data.empty:
+            st.error("No data found for this symbol.")
+            return
+
+        normalized_price = asset_data / asset_data.iloc[0] * 100
+
+        # Market Cap usando fast_info
+        last_price = asset_data.iloc[-1]
+        shares_outstanding = fast_info.get("sharesOutstanding", None)
+
+        marketCap = last_price * shares_outstanding if shares_outstanding else None
+
+        pe_ratio = asset_info.get('trailingPE', None)
+        pb_ratio = asset_info.get('priceToBook', None)
+
   #market cap = asset's last price * number of outstanding shares
   #se utiliza iloc para acceder al último elemento de la lista (asset_data) por medio de su
   #indice, no del nombre de la fila
@@ -195,10 +218,10 @@ if selected_option == "About the Author":
     
     # Información adicional sobre el autor
     st.write("""
-  Hello! My name is Alejandro, and I am a 6th-semester student of Actuarial Sciences
-    at the Universidad Nacional Autónoma de México (UNAM). I have recently 
-    completed the first half of my bachelor's degree, and with the knowledge 
-    I've gained over the past two years, I am developing a Streamlit app focused
+  Hello! My name is Alejandro, and I am an 8th-semester student of Actuarial Sciences
+    at Universidad Nacional Autónoma de México (UNAM). I have recently 
+    completed an exchange semester at University of Helsinki, and with the knowledge 
+    I've gained over the past three years, I am developing a Streamlit app focused
     on Asset Allocation and Portfolio Management.
              
     The goal of this prototype application is to provide basic yet valuable insights 
